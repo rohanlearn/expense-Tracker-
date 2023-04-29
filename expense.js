@@ -74,9 +74,22 @@ function edition(e,object){
         document.getElementById("description").value=object.des;
         var array = document.getElementById("category").options;
         var Arr = Array.from(array);
-        console.log(Arr.indexOf(object.cate))
+        var Arrs = Object.keys(Arr);
+        let index = 0;
+        Arrs.forEach((arr)=>{
+            
+            if(Arr[arr].textContent==object.cate){
+               index=arr
+            }
+            
+            
+
+
+        });
         
-        document.getElementById("category").options[document.getElementById("category").selectedIndex=Arr.indexOf(object.cate)];
+
+        
+        document.getElementById("category").options[document.getElementById("category").selectedIndex=index];
         localStorage.removeItem(object.ex);
         adder.removeChild(li);
     }
